@@ -55,7 +55,7 @@ The fraud rate was calculated as `y.mean() ≈ 0.0017`, which was used as the ba
 
 Distribution analysis revealed that the Amount variable is highly skewed.
 
-![image.png](attachment:d2ef458d-1ecc-496a-b6d0-8b93b986aecc.png)
+<img width="1878" height="712" alt="Ekran görüntüsü 2025-08-14 181134" src="https://github.com/user-attachments/assets/34d36d7d-e818-47f1-8da0-86250bcf597e" />
 
 After reducing the data to two dimensions via PCA, fraudulent transactions appeared as outliers, separated from the main cluster of legitimate transactions.
 
@@ -63,12 +63,12 @@ After reducing the data to two dimensions via PCA, fraudulent transactions appea
 
 `StratifiedShuffleSplit:` A StratifiedShuffleSplit with an 80/20 ratio was applied to preserve class imbalance. *The reason for using StratifiedShuffleSplit instead of a simple train-test split is that anomalies represent a very small and imbalanced portion of the dataset. Stratified sampling ensures the preservation of this distribution, leading to more reliable anomaly detection results compared to a random split.*
 
-![image.png](attachment:1151141b-8673-4300-ad2c-2b543ebe0ace.png)
+<img width="1433" height="1044" alt="Ekran görüntüsü 2025-08-14 181231" src="https://github.com/user-attachments/assets/b12a536a-4815-46da-895d-f813072b6c3e" />
 
 **`No SMOTE or similar methods were applied`: In the financial domain, generating synthetic fraudulent transactions risks introducing unrealistic patterns, and therefore was deliberately avoided.**
 
 `Outlier Removal:` A Z-score threshold (>3 standard deviations) was applied to eliminate extreme values.
 
-![image.png](attachment:24e0df7d-e5a2-4005-b257-18e61b8a6640.png)
+<img width="1205" height="857" alt="image" src="https://github.com/user-attachments/assets/ddfc488c-7e29-4411-8674-1a7bc4dadc1f" />
 
 ----
